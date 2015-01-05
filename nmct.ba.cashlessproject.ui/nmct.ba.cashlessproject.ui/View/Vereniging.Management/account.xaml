@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.Vereniging.Management.account"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel"
+        mc:Ignorable="d" 
+        d:DesignHeight="600" d:DesignWidth="900">
+    
+    <UserControl.DataContext>
+        <vm:AccountVM />
+    </UserControl.DataContext>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="imgLogo" Margin="10" />
+
+            <Button Content="Producten" Grid.Row="1"  Margin="15,10,15,10" Command="{Binding ProductCommand}"/>
+            <Button Content="Medewerkers" Grid.Row="2"  Margin="15,10,15,10" Command="{Binding MedewerkerCommand}" />
+            <Button Content="Kassa's" Grid.Row="3"  Margin="15,10,15,10" Command="{Binding KassaCommand}"/>
+            <Button Content="Klanten" Grid.Row="4"  Margin="15,10,15,10" Command="{Binding KlantCommand}"/>
+            <Button Content="Uitloggen" Grid.Row="7"  Margin="15,10,15,10" Command="{Binding LogoutCommand}"/>
+            <Button Content="Account" Grid.Row="5" IsEnabled="False"  Margin="15,10,15,10" />
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="7*" />
+
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txbTitel" Text="Account" HorizontalAlignment="Center" FontSize="32" Margin="0,25,0,5" />
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="txbGebruikersnaam" Text="Gebruikersnaam:" Grid.Column="0" Grid.Row="1" FontSize="16" Margin="10" HorizontalAlignment="Right" />
+                <Label Content="{Binding Gebruiker}" Grid.Column="1" Grid.Row="1" FontSize="16" FontWeight="Bold" Margin="10" HorizontalAlignment="Left" />
+
+                <TextBlock x:Name="txbWachtwoord" Text="Wachtwoord:" Grid.Column="0" Grid.Row="2" FontSize="16" Margin="10" HorizontalAlignment="Right" />
+                <TextBox Text="{Binding OldPass}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="10" Width="150" />
+
+                <TextBlock x:Name="txbNieuwWachtwoord" Text="Nieuw wachtwoord:" Grid.Column="0" Grid.Row="3" FontSize="16" Margin="10" HorizontalAlignment="Right" />
+                <TextBox Text="{Binding NewPass}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="10" Width="150" />
+
+                <TextBlock x:Name="txbBevestigWachtwoord" Text="Herhaal wachtwoord:" Grid.Column="0" Grid.Row="4" FontSize="16" Margin="10" HorizontalAlignment="Right" />
+                <TextBox Text="{Binding NewPassConfirm}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Margin="10" Width="150" />
+
+                <Button Command="{Binding SaveCommand}" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Margin="10" Content="Opslaan" Padding="5"/>
+                <Button Command="{Binding ResetCommand}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="10" Content="Reset" Padding="5"/>
+                <TextBlock Foreground="Red" Text="{Binding Error}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

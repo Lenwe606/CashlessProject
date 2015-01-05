@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.Vereniging.Kassasysteem.klantenkaartScannen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel.Kassasysteem"
+        mc:Ignorable="d" 
+         d:DesignHeight="600" d:DesignWidth="900">
+
+    <UserControl.DataContext>
+        <vm:KlantenKaartScannenVM />
+    </UserControl.DataContext>
+    
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        <Label x:Name="lblTitel" Grid.Row="0" Content="Laat de klant zijn kaart inscannen" FontSize="42" HorizontalAlignment="Center" Margin="0,70,0,0" Foreground="#FFF50D0D"/>
+        <TextBlock FontSize="18" Foreground="Red" Grid.Row="1" Text="{Binding Error}" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBox HorizontalAlignment="center" Height="39" Text="{Binding KaartCode}" VerticalAlignment="Top" Width="218" Grid.Row="2" Margin="0,15,0,0"/>
+        <Button Content="Uitloggen"  Command="{Binding LogoutCommand}" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" Width="150"  Height="50" Grid.Row="3" Margin="0,15,200,0" Foreground="#FFE81D14"/>
+        <Button Content="Bestellen"  Command="{Binding LoadCommand}" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" Width="150"  Height="50" Grid.Row="3" Margin="200,15,0,0" Foreground="#FF2DA812"/>
+    </Grid>
+</UserControl>

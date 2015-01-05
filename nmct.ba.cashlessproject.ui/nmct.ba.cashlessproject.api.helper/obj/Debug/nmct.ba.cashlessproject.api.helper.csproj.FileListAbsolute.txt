@@ -1,0 +1,5 @@
+C:\Users\Joris\Dropbox\2NMCT-S1\Business Application\Project\mvvm\nmct.ba.cashlessproject.ui\nmct.ba.cashlessproject.api.helper\bin\Debug\nmct.ba.cashlessproject.api.helper.dll
+C:\Users\Joris\Dropbox\2NMCT-S1\Business Application\Project\mvvm\nmct.ba.cashlessproject.ui\nmct.ba.cashlessproject.api.helper\bin\Debug\nmct.ba.cashlessproject.api.helper.pdb
+C:\Users\Joris\Dropbox\2NMCT-S1\Business Application\Project\mvvm\nmct.ba.cashlessproject.ui\nmct.ba.cashlessproject.api.helper\obj\Debug\nmct.ba.cashlessproject.api.helper.dll
+C:\Users\Joris\Dropbox\2NMCT-S1\Business Application\Project\mvvm\nmct.ba.cashlessproject.ui\nmct.ba.cashlessproject.api.helper\obj\Debug\nmct.ba.cashlessproject.api.helper.pdb
+C:\Users\Joris\Dropbox\2NMCT-S1\Business Application\Project\mvvm\nmct.ba.cashlessproject.ui\nmct.ba.cashlessproject.api.helper\obj\Debug\nmct.ba.cashlessproject.api.helper.csprojResolveAssemblyReference.cache

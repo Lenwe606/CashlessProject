@@ -1,0 +1,58 @@
+﻿<Window x:Class="nmct.ba.cashlessproject.ui.View.klantsysteem.MainWindow3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:nmct.ba.cashlessproject.ui.View.klantsysteem"
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel.Klantsysteem"
+        Title="Klantsysteem" WindowState="Maximized">
+    <Window.DataContext>
+        <vm:ApplicationVM />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:LoginVM}">
+            <v:inloggen />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ProfielVM}">
+            <v:profiel />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:SaldoOpladenVM}">
+            <v:saldoopladen />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:BetalingUitvoerenVM}">
+            <v:BetalingUitvoeren />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:BetalingUitgevoerdVM}">
+            <v:BetalingUitgevoerd />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:RegistratieVM}">
+            <v:Registratie />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:BevestigingVM}">
+            <v:Bevestiging />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:GeregistreerdVM}">
+            <v:Geregistreerd />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="32"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPage}"/>
+    </Grid>
+</Window>

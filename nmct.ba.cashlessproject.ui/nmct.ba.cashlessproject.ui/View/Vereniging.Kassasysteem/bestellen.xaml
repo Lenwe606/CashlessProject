@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.Vereniging.Kassasysteem.bestellen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel.Kassasysteem"
+        mc:Ignorable="d" 
+         d:DesignHeight="600" d:DesignWidth="900">
+
+    <UserControl.DataContext>
+        <vm:BestellingVM/>
+    </UserControl.DataContext>
+
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="{Binding KlantNaam}" Grid.Column="0" FontSize="20" Margin="5,5,0,0" />
+            <Label Content="{Binding KlantSaldo}" Grid.Column="0" FontSize="20" Margin="5,35,0,0" />
+
+            <Label x:Name="lblTitel" Content="Kassa" Grid.Column="1" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Label Content="{Binding MedewerkerNaam}" Grid.Column="2" FontSize="20" Margin="0,5,5,0" HorizontalAlignment="Right"  />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="4*" />
+                </Grid.RowDefinitions>
+
+                <Button Content="Dranken" Command="{Binding DrankenCommand}" Grid.Column="0" Margin="5,5,394,5" Width="190" />
+                <Button Content="Etenswaar" Command="{Binding EtenCommand}" Grid.Column="0" Margin="203,5,196,5" Width="190"/>
+                <Button Content="Andere" Command="{Binding AndereCommand}" Grid.Column="0" Margin="401,5,4,5" Width="188"/>
+                
+                <ListBox Grid.Row="1" Margin="5,5,105,5" ItemsSource="{Binding Producten}" DisplayMemberPath="ProductNaam" SelectedItem="{Binding SelectedProduct}" FontSize="28"/>
+                <Button Content="+" Grid.Row="1" Margin="0,5,5,5" Height="95" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="38" Width="95" Command="{Binding AddCommand}"/>
+                <Button Content="-" Grid.Row="1" Margin="0,105,5,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="95" FontSize="38" Width="95" Command="{Binding RemoveCommand}"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <ListBox Margin="5,5,5,45" ItemsSource="{Binding Order}" DisplayMemberPath="ProductNaam"/>
+                <Label Content="{Binding ResterendSaldo}" Margin="5,0,5,5" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#FFFD0C0C"  />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding BackCommand}" Content="Andere klant" Grid.Column="0" FontSize="20" Margin="5,5,5,5" Foreground="#FFF7230D" FontWeight="Bold" />
+            <Button Command="{Binding NextCommand}" Content="Afrekenen" Grid.Column="2" FontSize="20" Margin="5,5,5,5" Foreground="#FF529C28" FontWeight="Bold" />
+        </Grid>
+
+
+    </Grid>
+</UserControl>

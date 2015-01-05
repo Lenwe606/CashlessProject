@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.klantsysteem.Registratie"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel.Klantsysteem"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="900">
+    
+    <UserControl.DataContext>
+        <vm:RegistratieVM />
+    </UserControl.DataContext>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Registratie" FontSize="42" HorizontalAlignment="Center" Margin="0,70,0,0"/>
+
+        <Label Grid.Row="1" Foreground="#FFF50D0D" Content="Deze kaart is nog niet geregistreerd. Voer uw eID in!" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" />
+
+        <Label Grid.Row="1" Content="Voor- en achternaam:" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Center" Margin="0,10,250,0" />
+        <Label Grid.Row="1" Content="{Binding FullName}" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Center" Margin="250,10,0,0"  />
+
+        <Label Grid.Row="1" Content="Adres:" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Center" Margin="0,0,110,-10" />
+        <Label Grid.Row="1" Content="{Binding Adres}" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Center" Margin="250,0,0,-10"  />
+        <Label Grid.Row="1" Content="{Binding Adres2}" VerticalAlignment="Bottom" FontSize="20" HorizontalAlignment="Center" Margin="250,0,0,-40"  />
+
+        <Label Grid.Row="2" Content="Foto:" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center" Margin="0,60,100,0" />
+
+        <Button Command="{Binding NextCommand}" Content="Volgende" FontSize="18" Width="200" VerticalAlignment="Top" Margin="0,50,250,0" Grid.Row="3" HorizontalAlignment="Center" Foreground="#FF2DA812" Height="50" FontWeight="Bold" />
+        <Button Command="{Binding BackCommand}" Content="Annuleer" FontSize="18" Width="200" VerticalAlignment="Top" Margin="250,50,0,0" Height="50" Grid.Row="3" HorizontalAlignment="Center" Foreground="#FFE81D14" FontWeight="Bold" />
+
+
+    </Grid>
+</UserControl>

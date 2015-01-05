@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.inloggen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel"
+        mc:Ignorable="d" 
+        d:DesignHeight="350" d:DesignWidth="525">
+
+    <UserControl.DataContext>
+        <vm:LoginVM/>
+    </UserControl.DataContext>
+    <StackPanel Background="White">
+        <TextBlock Text="Vereniging - Management" Margin="25,25,25,0" TextAlignment="Center" FontSize="18"/>
+        <Label  Content="Gebruikersnaam:" Margin="25,10,25,0" />
+        <TextBox Text="{Binding Username}" Margin="25,0,25,0" />
+
+        <Label Content="Wachtwoord:" Margin="25,10,25,0" />
+        <TextBox  Text="{Binding Password}" Margin="25,0,25,0" />
+
+        <Button x:Name="btnInloggen" Command="{Binding LoginCommand}" Content="Inloggen" Margin="75,15,75,0"/>
+        <TextBlock Foreground="Red" Text="{Binding Error}"/>
+    </StackPanel>
+</UserControl>

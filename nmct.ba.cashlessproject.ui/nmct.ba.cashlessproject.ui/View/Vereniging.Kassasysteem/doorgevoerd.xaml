@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.Vereniging.Kassasysteem.doorgevoerd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel.Kassasysteem"
+        mc:Ignorable="d" 
+         d:DesignHeight="600" d:DesignWidth="900">
+    
+    <UserControl.DataContext>
+        <vm:DoorgevoerdVM />
+    </UserControl.DataContext>
+    
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblTitel" Content="De bestelling is doorgevoerd" FontSize="42" HorizontalContentAlignment="Center" Margin="0,65,0,0" Grid.Row="0" />
+
+        <Label Content="Totaal betaald:" FontSize="28" Grid.Row="1" HorizontalAlignment="Center" Margin="0,75,150,0" />
+        <Label Content="{Binding Totaal}" FontSize="28" Grid.Row="1" HorizontalAlignment="Center" Margin="150,75,0,0" FontWeight="Bold" />
+
+        <Label Content="Nieuw saldo:" FontSize="28" Grid.Row="1" HorizontalAlignment="Center" Margin="0,150,150,0" />
+        <Label Content="{Binding NieuwSaldo}" FontSize="28" Grid.Row="1" HorizontalAlignment="Center" Margin="150,150,0,0" FontWeight="Bold" />
+
+        <Button Command="{Binding NewCommand}" Content="Nieuwe bestelling" FontSize="20" Grid.Row="2" HorizontalAlignment="Center" Width="200" Margin="0,20,0,20" Foreground="#FFFB0202" FontWeight="Bold" />
+    </Grid>
+</UserControl>

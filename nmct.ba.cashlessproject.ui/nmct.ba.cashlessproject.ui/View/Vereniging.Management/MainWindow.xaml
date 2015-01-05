@@ -1,0 +1,51 @@
+﻿<Window x:Class="nmct.ba.cashlessproject.ui.View.Vereniging.Management.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:w="clr-namespace:nmct.ba.cashlessproject.ui.View"
+        xmlns:v="clr-namespace:nmct.ba.cashlessproject.ui.View.Vereniging.Management"
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel"
+        Title="MainWindow" WindowState="Maximized">
+    <Window.DataContext>
+        <vm:ApplicationVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:LoginVM}">
+            <w:inloggen/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MedewerkerVM}">
+            <v:medewerkers/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:KassaVM}">
+            <v:kassa/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:ProductVM}">
+            <v:producten/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:KlantVM}">
+            <v:klanten/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:AccountVM}">
+            <v:account/>
+        </DataTemplate>
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="32"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPage}"/>
+    </Grid>
+</Window>
